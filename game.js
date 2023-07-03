@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var y = Math.floor(Math.random() * 12) + 1;
         var a = x;
         var b = y;
-        questionElement.innerText = 'Question ' + currentQuestion + ': ' + a + ' * ' + b;
+        questionElement.innerText = 'Question ' + currentQuestion + ': '+'\n'+ a + ' X ' + b+' =';
         ans = a * b;
         commentelement.innerText = '';
     }
