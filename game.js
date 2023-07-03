@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Submit Answer
-    submitButton.addEventListener('click', function() {
+    function submitAnswer() {
         var answer = parseInt(answerInput.value);
         if (isNaN(answer)) {
             commentelement.innerText = 'Please enter a number.';
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             checkAnswer(answer);
         }
         answerInput.value = '';
-    });
+    }
 
     // Check Answer
     function checkAnswer(answer) {
@@ -133,5 +133,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if(seconds < 10)
           seconds = "0"+seconds;
         document.getElementById("time").innerHTML =  minute + ":" + seconds;
-     }
+    }
+
+    answerInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default form submission behavior
+            submitAnswer();
+        }
+    });
+
+    submitButton.addEventListener('click', submitAnswer);
 });
