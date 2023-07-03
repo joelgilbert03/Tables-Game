@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Multiplication - Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        }
+        input{
+            text-align: center;
+            height: 20%;
+            box-sizing: border-box;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: large;
+        }
+        input[type=text]{
+            height: 30px;
+        }
+        input[type=password]{
+            height: 30px;
+        }
+        input[type=submit]{
+            height: 30px;
+            width: 80%;
+        }
+        #f1{
+            border: 2px solid black;
+            width: 600px;
+            margin:auto;
+        }
+        #f2{
+            border: 2px solid black;
+            width: 300px;
+            margin:auto;
+        }
+        #t{
+            text-align: center;
+            font-size: 18px;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var button = document.querySelector('input[type="submit"]');
+            var form = document.querySelector('form');
+
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                var nameInput = document.getElementById('t1');
+                var passwordInput = document.getElementById('t2');
+                var errorElement = document.getElementById('error-message');
+
+                var name = nameInput.value.trim();
+                var password = passwordInput.value.trim();
+
+                if (name === '') {
+                    showError('Please enter your name.');
+                } else if (password === '') {
+                    showError('Please enter your password.');
+                } else {
+                    // Form is valid, you can proceed with submission
+                    form.submit();
+                }
+
+                function showError(message) {
+                    errorElement.innerText = message;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="maingame.html" method="get">
+        <fieldset id="f1">
+            <legend><h2><b>User Login</b></h2></legend>
+            <fieldset id="f2">
+                <legend><h2><b>Login</b></h2></legend>
+                <div id="t">
+                    <img src="pro.jpg"><br><br>
+                    <input type="text" id="t1" placeholder="Name" name="Name"><br><br>
+                    <input type="password" id="t2" placeholder="Password" name="Password"><br><br>
+                    <input type="checkbox" name="Remember">Remember Me&nbsp;&nbsp;&nbsp;
+                    <a href="">Forget Password?</a><br><br>
+                    <input type="submit" value="Login"><br>
+                    <p>Don't have an account? <a href="Signup.html">Signup</a></p>
+                    <p id="error-message" style="color: red;"></p>
+                </div>
+            </fieldset>
+        </fieldset>
+    </form>
+</body>
+</html>
