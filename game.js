@@ -144,4 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
     submitButton.addEventListener("click", submitAnswer);
   });
-  
+  function refreshPage() {
+    location.reload();
+  }
